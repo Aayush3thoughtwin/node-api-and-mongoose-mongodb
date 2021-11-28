@@ -55,7 +55,7 @@ router.get('/:id',async (req, res) => {
 
 router.delete('/:id',async(req,res)=>{
     try{ 
-        const removeemp = await use.remove({_id:req.params.id});
+        const removeemp = await use.deleteMany({_id:req.params.id});
         res.json(removeemp);
     }catch{
         res.json({message: err});
